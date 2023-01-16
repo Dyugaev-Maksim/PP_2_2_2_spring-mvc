@@ -4,6 +4,7 @@ public class Car {
     private String name;
     private String model;
     private int serial;
+
     public Car(String name, String model, int serial) {
         this.name = name;
         this.model = model;
