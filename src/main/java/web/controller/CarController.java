@@ -16,9 +16,9 @@ public class CarController {
     @GetMapping("/car")
     String getCarList(Model model,
                       @RequestParam(value = "count", required = false) String count1) {
-        BusinessLogic bs = new BusinessLogic();
+        CarServiceImp carServiceImp= new CarServiceImp();
         model.addAttribute("something", "Car table");
-        model.addAttribute("car", bs.logic(count1));
+        model.addAttribute("car", carServiceImp.logic(count1));
         return "car";
     }
 }
