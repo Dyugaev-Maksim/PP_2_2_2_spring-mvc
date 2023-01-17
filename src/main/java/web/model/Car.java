@@ -1,5 +1,7 @@
 package web.model;
 
+import java.util.Objects;
+
 public class Car {
     private String name;
     private String model;
@@ -11,14 +13,6 @@ public class Car {
         this.serial = serial;
     }
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "name='" + name + '\'' +
-                ", model='" + model + '\'' +
-                ", serial=" + serial +
-                '}';
-    }
 
     public String getName() {
         return name;
@@ -42,5 +36,27 @@ public class Car {
 
     public void setSerial(int serial) {
         this.serial = serial;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", model='" + model + '\'' +
+                ", serial=" + serial +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return serial == car.serial && Objects.equals(name, car.name) && Objects.equals(model, car.model);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, model, serial);
     }
 }

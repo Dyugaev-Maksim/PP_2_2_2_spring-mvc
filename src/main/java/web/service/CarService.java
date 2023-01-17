@@ -1,9 +1,9 @@
-package web.carservice;
+package web.service;
 
 import web.model.Car;
 
 import java.util.List;
 
 public interface CarService {
-    List<Car> getCountCar(String count1);
+    public List<Car> getCountCar(Integer count);
 }
