@@ -10,13 +10,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import web.service.CarServiceImp;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan("web")
 public class WebConfig implements WebMvcConfigurer {
-
     private final ApplicationContext applicationContext;
 
     public WebConfig(ApplicationContext applicationContext) {
@@ -49,10 +47,5 @@ public class WebConfig implements WebMvcConfigurer {
         registry.viewResolver(resolver);
         resolver.setCharacterEncoding("UTF-8");
         resolver.setContentType("text/html; charset=UTF-8");
-    }
-
-    @Bean
-    public CarServiceImp carServiceImp() {
-        return new CarServiceImp();
     }
 }

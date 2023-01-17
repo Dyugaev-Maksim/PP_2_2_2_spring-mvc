@@ -13,7 +13,6 @@ public class Car {
         this.serial = serial;
     }
 
-
     public String getName() {
         return name;
     }
