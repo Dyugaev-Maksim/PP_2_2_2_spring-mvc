@@ -1,13 +1,13 @@
 package web.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import web.model.Car;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component ("service")
+@Service
 public class CarServiceImp implements CarService {
 
     private final List<Car> cars = Arrays.asList(
