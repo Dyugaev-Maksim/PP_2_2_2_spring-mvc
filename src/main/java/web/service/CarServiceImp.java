@@ -7,8 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Component ("service")
 public class CarServiceImp implements CarService {
+
     private final List<Car> cars = Arrays.asList(
             new Car("BMW", "Lux", 5),
             new Car("VAZ", "WWW", 1),
